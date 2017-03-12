@@ -1,0 +1,264 @@
+---
+---
+
+// add bootstrap variable settings here
+
+@import 'bootstrap';
+@import 'variables';
+@import 'nav';
+
+@media (min-width: 1200px){
+.container {
+    width: 980px;
+}
+}
+//section padding
+section{
+	padding: 35px 0;
+}
+//button style
+.primary-btn{
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 0;
+    font-weight: 700;
+    color: white;
+    transition: all 0.5s;
+    &:hover{
+    	background: black;
+    	color: white;
+    	border-color: white;
+    }
+}
+
+.secondary-btn{
+	background: black;
+    border: 1px solid black;
+    border-radius: 0;
+    font-weight: 700;
+    color: white;
+    transition: all 0.5s;
+    &:hover{
+    	background: white;
+    	color: black;
+    	border-color: black;
+    }
+}
+// home page styles
+
+
+// carousel css
+.carousel-control.right, .carousel-control.left{
+	background-image: none;
+	background: none;
+}
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-prev, .carousel-control .icon-next{
+	border-radius: 50%;
+    background: black;
+    padding-top: 9px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+ol.carousel-indicators {
+	left: 50px;
+}
+.carousel-indicators li {
+	border: 1px solid black;
+}
+
+.carousel-indicators .active {
+	background-color: white;
+}
+
+// static home blocks
+.row.equal-cols{
+	overflow: hidden;
+}
+.home-brand-block{
+	background: url('../images/amouage.jpg') no-repeat center center;
+	min-height: 420px;
+}
+
+
+.home-quote-block {
+	background: black;
+	color: white;
+	text-align: center;
+	padding: 25px;
+    margin-top: 25px;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+}
+
+.brands-btn{
+	margin-top: 110%
+}
+
+.about-block-wrapper{
+	// padding: 0 25px;
+}
+.home-about-block {
+	position: relative;
+	background: url('../images/store.jpg') no-repeat center center;
+	min-height: 630px;
+    background-size: cover;
+}
+.about-home-btn {
+	margin-top: 7%;
+}
+.overlay{
+	position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background: rgba(0, 0, 0, 0.37);
+}
+
+// product section
+.product-section{
+	padding: 0 0 25px 0;
+}
+.product-image{
+	width: 65%;
+}
+.product-section .container > .row {
+	background: url('../images/blackbg.jpg');
+	padding: 100px;
+	background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.product-section .row {
+	background: white;
+	padding: 35px;
+	margin: 0;
+}
+
+.product-wrapper {
+    margin-right: -24px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: 12px;
+}
+
+.product-info .name{
+	font-weight: 700;
+    font-size: 12px;
+    margin: 0;
+}
+.product-info .info{
+	font-size: 10px;
+    margin: 0;
+    font-weight: 700;
+}
+
+.view-brands-home{
+	width: 100%;
+    line-height: 43px;
+    border: 12px solid white
+}
+
+
+// About page styles
+.banner-block{
+	padding: 0px;
+}
+.banner-block .row {
+	margin-right: 0;
+	margin-left: 0;
+}
+.about-banner{
+	background: url('../images/aboutbanner.jpg') no-repeat center center;
+	background-size: cover;
+	min-height: 400px;
+    border: 4px solid black;
+}
+
+.member-block{
+	border: 4px solid black;
+	margin: 8px;
+}
+.member-info{
+    border-top: 4px solid black;
+    padding: 58px 0;
+    text-align: center;
+    font-weight: 700;
+}
+
+.about-block {
+	font-weight: 700;
+}
+
+.gallery-image {
+	border: 6px solid black;
+	padding-right: 0;
+	padding-left: 0;
+	margin: 8px;
+}
+
+// Media page styles
+
+.media-banner{
+	background: url('../images/mediabanner.jpg') no-repeat center center;
+	background-size: cover;
+	min-height: 400px;
+    border: 4px solid black;
+}
+
+.pattern-block .row {
+	background: url('../images/pattern.png') repeat-x;
+	    min-height: 100px;
+    margin: 0;
+}
+// contact page style
+.contact-block {
+	padding: 0;
+
+}
+.contact-block .row{
+	border: 4px solid black;
+}
+#equalheight{
+	overflow: hidden;
+}
+.eqcol{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+.form-block #equalheight{
+    border: 4px solid black;
+}
+::-webkit-input-placeholder {
+    color:    #101010;
+}
+:-moz-placeholder {
+    color:    #101010;
+}
+::-moz-placeholder {
+    color:    #101010;
+}
+:-ms-input-placeholder {
+    color:    #101010;
+}
+
+.form-control{
+	border-radius: 0;
+	border-color: black;
+}
+.form-control:focus{
+	border-color: black;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(0, 0, 0, 0.6);
+
+}
+// footer css
+.footer .row{
+	border-top: 2px solid black;
+	border-bottom: 4px solid black;
+	padding: 8px 0;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
