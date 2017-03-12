@@ -21,17 +21,52 @@ title:  'Our Products'
 			{% assign amouageprods = site.products | where: "category", "Amouage" %}
 			{% for product in amouageprods %}
 			<div class="col-lg-4">
-				<div class="brand-container">
-					<div class="brand-image">
-						<img class="img-responsive" src="{{ product.image_path }}"></img>
-					</div>
-					<div class="brand-info">
-						<p class="name">{{ product.name }}</p>
-						<p class="info">{{ product.subtitle }}</p>
-					</div>
+				<div class="brand-container" >
+					<a href="#" data-toggle="modal" data-target="#{{ product.name | replace: ' ', '-' | downcase }}" class="product-modal-link">
+						<div class="brand-image">
+							<img class="img-responsive" src="{{ product.image_path }}"></img>
+						</div>
+						<div class="brand-info">
+							<p class="name">{{ product.name }}</p>
+							<p class="info">{{ product.subtitle }}</p>
+						</div>
+					</a>
 				</div>
+
 			</div>		    
 			{%endfor%}
 		</div>
 	</div>
 </section>
+
+{% for product in amouageprods %}
+<!-- Modal -->
+<div id="{{ product.name | replace: ' ', '-' | downcase }}" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+	
+    <!-- Modal content-->
+    <div class="modal-content">
+    <div class="row" >
+		<div class="col-lg-4 " >
+			<img class="img-responsive" src="{{ product.image_path }} " style="margin: 46px 8px;padding: 18px;"></img>
+		</div>
+		<div class="col-lg-8 " style="border-left: 2px solid black; padding: 35px;">
+			<img src="{{ product.category-logo }}" class="img-responsive" width="40%">
+			<h2>{{ product.name }}</h2>
+		    <p>{{ product.subtitle }} </p>
+		    
+		        <p style="font-size: 14px; color: #8a8a8a;margin-bottom: 20px; letter-spacing: 0.05em;">Luxury day wear, a fragrance that is both vibrant and sophisticated. A perfect complement to Amouage Gold.</p>">{{ product.content }}</p>
+		      
+		     <strong> <p>NOTES: <br>
+				{{product.notes}}
+		      </p></strong>
+		</div>	
+	</div>      
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+
+  </div>
+</div>
+{%endfor%}
