@@ -29,11 +29,12 @@ body {
     padding: 14px 0;
 }
 .navbar-custom {
+    border: none;
     border-radius: 0;
     border-color: black;
     border-bottom: 4px solid black;
     background:$primary-color;
-    border: none;
+    
 }
 .navbar-default .navbar-collapse {
 	// border-color: black;
