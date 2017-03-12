@@ -253,6 +253,29 @@ ol.carousel-indicators {
 	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(0, 0, 0, 0.6);
 
 }
+
+
+// brands page
+.brand-container{
+	border: 2px solid black;
+}
+.brand-image {
+    width: 55%;
+    margin: 0 auto;
+}
+.brand-info{
+    background: #dedede;
+    margin: 12px;
+    padding: 16px;
+}
+.brand-info .name{
+	font-size: 18px;
+	font-weight: 700;
+	margin: 0;
+}
+.brand-info .info {
+	font-size: 14px;
+}
 // footer css
 .footer .row{
 	border-top: 2px solid black;

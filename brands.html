@@ -1,0 +1,37 @@
+---
+layout: default
+title:  'Our Products'
+---
+
+<section class="brands-section">
+	<div class="container">
+		<div class="row info-row">
+			<div class="col-xs-3 col-lg-3">
+				<img src="images/amouagelogo.jpg" class="img-responsive">
+			</div>
+			<div class="col-xs-9 col-md-8 col-md-offset-1">
+				<p>Founded 30 years ago to reflect the wonderful heritage and tradition of perfumery from the Sultanate of Oman, Amouage is an international luxury fragrance house that draws inspiration form cultures around the world. <br><br>
+				Devoted to creating finely blended perfumes with the highest quality of ingredients sourced from around the world, Amouage
+				brings artistry to perfumery with an incomparable distinction. Original and evocative, Amouage perfumes are created by
+				Christopher Chong, Creative Director, with internationally recognized perfumers in Paris and Grasse , in the South of France. <br><br>
+				At the heart of all Amouage creations is a signature accord that cultivates the ultimate luxury of being unique and distinctive.</p>
+			</div>
+		</div>
+		<div class="row brands-row">
+			{% assign amouageprods = site.products | where: "category", "Amouage" %}
+			{% for product in amouageprods %}
+			<div class="col-lg-4">
+				<div class="brand-container">
+					<div class="brand-image">
+						<img class="img-responsive" src="{{ product.image_path }}"></img>
+					</div>
+					<div class="brand-info">
+						<p class="name">{{ product.name }}</p>
+						<p class="info">{{ product.subtitle }}</p>
+					</div>
+				</div>
+			</div>		    
+			{%endfor%}
+		</div>
+	</div>
+</section>
