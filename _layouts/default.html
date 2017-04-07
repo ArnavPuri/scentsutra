@@ -2,7 +2,18 @@
 <html>
 <head>
    <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>{{ page.title }} - {{ site.title }}</title>
+
+<!--   facebook meta info-->
+<!--
+    <meta property="og:url" content="{{pageUrl}}">
+    <meta property="og:image" content="{{imageUrl}}">
+    <meta property="og:description" content="{{description}}">
+    <meta property="og:title" content="{{pageTitle}}">
+    <meta property="og:site_name" content="{{siteTitle}}">
+    <meta property="og:see_also" content="{{homepageUrl}}">
+-->
 
    <link rel="stylesheet" type="text/css" href="{{ site.path }}/css/style.css" >
    <link rel="stylesheet" type="text/css" href="{{ site.path }}/css/fontawesome/css/font-awesome.min.css" >
@@ -15,7 +26,8 @@
   {{ content }}
 
   {% include footer.html %}
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-   <script src="{{ site.path }}/js/bootstrap.min.js"></script>
+<script src="{{ site.path }}/js/bootstrap.min.js"></script>
 </body>
 </html>
