@@ -312,6 +312,12 @@ ol.carousel-indicators {
 .brand-image {
     width: 55%;
     margin: 0 auto;
+    img {
+        max-height: 220px;
+        margin: 0 auto;
+        width: auto;
+        padding: 12px;
+    }
 }
 .brand-info{
     background: #dedede;
@@ -354,3 +360,14 @@ ol.carousel-indicators {
 }
 
 
+
+.brands-row {
+    margin-bottom: 40px;
+}
+.info-row{
+    margin-bottom: 25px;
+}
+.modal-brand-image{
+    max-height: 320px;
+    margin: 0 auto;
+}

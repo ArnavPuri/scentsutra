@@ -5,6 +5,7 @@ title:  'Our Products'
 
 <section class="brands-section">
 	<div class="container">
+<!--	amourage products-->
 		<div class="row info-row">
 			<div class="col-xs-3 col-lg-3">
 				<img src="images/amouagelogo.jpg" class="img-responsive">
@@ -24,7 +25,72 @@ title:  'Our Products'
 				<div class="brand-container" >
 					<a href="#" data-toggle="modal" data-target="#{{ product.name | replace: ' ', '-' | downcase }}" class="product-modal-link">
 						<div class="brand-image">
-							<img class="img-responsive" src="{{ product.image_path }}"></img>
+							<img class="img-responsive" src="{{ product.image_path }}"/>
+						</div>
+						<div class="brand-info">
+							<p class="name">{{ product.name }}</p>
+							<p class="info">{{ product.subtitle }}</p>
+						</div>
+					</a>
+				</div>
+
+			</div>
+			{%endfor%}
+		</div>
+<!--		nasomatto products-->
+		<div class="row info-row">
+			<div class="col-xs-3 col-lg-3">
+				<img src="images/nasomattologo.jpg" class="img-responsive">
+			</div>
+			<div class="col-xs-9 col-md-8 col-md-offset-1">
+				<p>"I begin to make something but at a certain point, it starts making choices by itself. It is the process that interests and guides me. I like the feeling of losing control and Iʼm not the one making the choices. My involvement is to create something that is alive and will be able to say new things. I want my perfumes to have an intelligence of their own, not just be slaves to my meaning."</p>
+				<strong><em>ALESSANDRO GUALTIERI, THE NOSE, NASOMATTO</em></strong>
+			</div>
+		</div>
+		<div class="row brands-row">
+			{% assign nasomattoprods = site.products | where: "category", "Nasomatto" %}
+			{% for product in nasomattoprods %}
+			<div class="col-lg-4">
+				<div class="brand-container" >
+					<a href="#" data-toggle="modal" data-target="#{{ product.name | replace: ' ', '-' | downcase }}" class="product-modal-link">
+						<div class="brand-image">
+							<img class="img-responsive" src="{{ product.image_path }}" />
+						</div>
+						<div class="brand-info">
+							<p class="name">{{ product.name }}</p>
+							<p class="info">{{ product.subtitle }}</p>
+						</div>
+					</a>
+				</div>
+
+			</div>
+			{%endfor%}
+		</div>
+
+		<!--		DALI HAUTE PARFUMERIE PARIS products-->
+		<div class="row info-row">
+			<div class="col-xs-3 col-lg-3">
+				<img src="images/dalilogo.jpg" class="img-responsive">
+			</div>
+			<div class="col-xs-9 col-md-8 col-md-offset-1">
+				<p>
+               Dalí Haute Parfumerie draws its inspiration from the permanent exhibition, “Dalí- Jewels,” to which the Fundació Gala-Salvador Dalí has dedicated a museum next to the Dalí Theatre-Museum in Figueres. Borrowing several emblems from the Masterʼs iconography, Dalí Haute Parfumerie follows one of his ambitions: to create jewelry pieces that please the eye, while raising the spirits and touching the heart. <br>
+               <br>
+               Like a jewelry piece by Dalí, the fragrance takes on a completely new dimension when it touches the skin. It enhances the wearer by giving her artistic control of her life. The exceptional bottles, designed with the same eye for luxury and excellence, showcase the divine senses. Figurative and expressive, they feature the quintessence of the artistʼs spirit: a skillfully and freely interpreted tribute to an original piece of art. Becoming jewels in themselves, the bottles hint at the treasures they hold within and weave a bond between two forms of language: that of the perfumer and that of the artist, uniting smell, touch and sight, the senses of sensuality. <br><br>
+               Nose Alberto Morillas selected the rarest raw materials in Perfumery, like exceptional gems, to express precious scents reflecting the soul of Salvador Dali and his sumptuous and exceptional goldsmith work from the mid-20th century. <br>
+               <br>
+                Five new fragrances continue the story of the great surrealist, inspired by his jewellery line. For the first five eau de parfum symbols were chosen which Dali appreciated and widely used: an eye (Regard Scintillant de Mille Beautes), butterfly (Voyage Onirique du Papillon de Vie), goblet (Calice de la seduction), hand (Melodie du Cygne de la Main) and the clock (Fluidite du temps Imaginaire).
+                </p>
+			</div>
+		</div>
+		<div class="row brands-row">
+			{% assign daliprods = site.products | where: "category", "Dali Haute Parfumerie" %}
+			{% for product in daliprods %}
+			<div class="col-lg-4">
+				<div class="brand-container" >
+					<a href="#" data-toggle="modal" data-target="#{{ product.name | replace: ' ', '-' | downcase }}" class="product-modal-link">
+						<div class="brand-image">
+							<img class="img-responsive" src="{{ product.image_path }}" />
 						</div>
 						<div class="brand-info">
 							<p class="name">{{ product.name }}</p>
@@ -39,6 +105,7 @@ title:  'Our Products'
 	</div>
 </section>
 
+<!--Amouage product modals-->
 {% for product in amouageprods %}
 <!-- Modal -->
 <div id="{{ product.name | replace: ' ', '-' | downcase }}" class="modal fade" role="dialog">
@@ -47,19 +114,90 @@ title:  'Our Products'
     <!-- Modal content-->
     <div class="modal-content">
     <div class="row" >
-		<div class=" col-xs-4 col-lg-4 " >
-			<img class="img-responsive" src="{{ product.image_path }} " style="margin: 46px 8px;padding: 18px;"></img>
+		<div class=" col-xs-4 col-lg-4 " style="border-right: 2px solid black; ">
+			<img class="img-responsive modal-brand-image" src="{{ product.image_path }} " style="padding: 18px;"></img>
 		</div>
-		<div class="col-xs-8 col-lg-8 " style="border-left: 2px solid black; padding: 35px;">
+		<div class="col-xs-8 col-lg-8 " style="padding: 35px;">
+			<img src="{{ product.category-logo }}" class="img-responsive" width="40%">
+			<h2>{{ product.name }}</h2>
+		    <p>{{ product.subtitle }} </p>
+
+		        <p style="font-size: 14px; color: #8a8a8a;margin-bottom: 20px; letter-spacing: 0.05em;">{{ product.content }}</p>
+
+		     <strong> <p>NOTES: <br>
+				{{product.notes}}
+		      </p></strong>
+		</div>
+	</div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+
+  </div>
+</div>
+{%endfor%}
+
+
+<!--nasomatto product modals-->
+{% for product in nasomattoprods %}
+<!-- Modal -->
+<div id="{{ product.name | replace: ' ', '-' | downcase }}" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+    <div class="row" >
+		<div class=" col-xs-4 col-lg-4 " style="border-right: 2px solid black; ">
+			<img class="img-responsive modal-brand-image" src="{{ product.image_path }} " style="padding: 18px;"/>
+		</div>
+		<div class="col-xs-8 col-lg-8 " style="padding: 35px;">
+			<img src="{{ product.category-logo }}" class="img-responsive" width="40%">
+			<h2>{{ product.name }}</h2>
+		    <p>{{ product.subtitle }} </p>
+
+		        <p style="font-size: 14px; color: #8a8a8a;margin-bottom: 20px; letter-spacing: 0.05em;">{{ product.content }}</p>
+
+<!--
+		     <strong> <p>NOTES: <br>
+				{{product.notes}}
+		      </p></strong>
+-->
+		</div>
+	</div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+
+  </div>
+</div>
+{%endfor%}
+
+<!--dali haute product dmodals-->
+{% for product in daliprods %}
+<!-- Modal -->
+<div id="{{ product.name | replace: ' ', '-' | downcase }}" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+    <div class="row" >
+		<div class=" col-xs-4 col-lg-4 " style="border-right: 2px solid black; ">
+			<img class="img-responsive modal-brand-image" src="{{ product.image_path }} " style="padding: 18px;"/>
+		</div>
+		<div class="col-xs-8 col-lg-8 " style="padding: 35px;">
 			<img src="{{ product.category-logo }}" class="img-responsive" width="40%">
 			<h2>{{ product.name }}</h2>
 		    <p>{{ product.subtitle }} </p>
 		    
 		        <p style="font-size: 14px; color: #8a8a8a;margin-bottom: 20px; letter-spacing: 0.05em;">{{ product.content }}</p>
 		      
+<!--
 		     <strong> <p>NOTES: <br>
 				{{product.notes}}
 		      </p></strong>
+-->
 		</div>	
 	</div>      
       <!-- <div class="modal-footer">
