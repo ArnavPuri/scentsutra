@@ -310,11 +310,14 @@ ol.carousel-indicators {
 	border: 2px solid black;
     min-height: 360px;
     margin-bottom: 24px;
+    img{
+        min-height: 220px;
+    }
 }
 .brand-image {
     width: 55%;
     margin: 0 auto;
-    min-height: 220px;
+    
     img {
         max-height: 220px;
         margin: 0 auto;
